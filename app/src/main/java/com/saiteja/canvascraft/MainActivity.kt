@@ -44,8 +44,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.saiteja.canvascraft.ui.theme.CanvasCraftTheme
 
-
-
 class MainActivity : ComponentActivity() {
     @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -151,7 +149,7 @@ class MainActivity : ComponentActivity() {
                                             color = textColor,
                                             fontSize = 20.sp,
                                             fontWeight = FontWeight.Bold,
-                                            fontFamily = FontFamily.Monospace,
+                                            fontFamily = FontFamily.Monospace
                                         )
                                     }
                                     Box(
@@ -427,9 +425,7 @@ class MainActivity : ComponentActivity() {
                                     ) {
                                         Row(
                                             modifier = Modifier.fillMaxSize(),
-                                            horizontalArrangement = Arrangement.spacedBy(
-                                                spacingValue.dp
-                                            )
+                                            horizontalArrangement = Arrangement.spacedBy(spacingValue.dp)
                                         ) {
                                             Box(
                                                 modifier = Modifier
@@ -510,19 +506,17 @@ class MainActivity : ComponentActivity() {
                                         modifier = Modifier
                                             .fillMaxWidth()
                                             .height(450.dp)
-                                            .clip(RoundedCornerShape(radiusValue.dp))
+                                            .clip(RoundedCornerShape(radiusValue.dp ))
                                             .padding(4.dp)
                                             .background(gridBg)
                                     )
                                     {
                                         Column(
                                             modifier = Modifier.fillMaxSize(),
-                                            verticalArrangement = Arrangement.spacedBy(spacingValue.dp)
+                                            verticalArrangement = Arrangement.spacedBy( spacingValue.dp )
                                         ) {
                                             Row(
-                                                horizontalArrangement = Arrangement.spacedBy(
-                                                    spacingValue.dp
-                                                )
+                                                horizontalArrangement = Arrangement.spacedBy( spacingValue.dp )
                                             ) {
                                                 Box(
                                                     modifier = Modifier
@@ -621,7 +615,8 @@ class MainActivity : ComponentActivity() {
                                                     Image(
                                                         painter = painterResource(id = cell3image!!),
                                                         contentDescription = null,
-                                                        modifier = Modifier.fillMaxSize()
+                                                        modifier = Modifier
+                                                            .fillMaxSize()
                                                             .graphicsLayer {
                                                                 scaleX = scale2
                                                                 scaleY = scale2
@@ -644,27 +639,22 @@ class MainActivity : ComponentActivity() {
                                             .background(gridBg)
                                             .padding(4.dp)
                                     ) {
-
-                                        Column(
-                                            verticalArrangement = Arrangement.spacedBy(
-                                                spacingValue.dp
-                                            )
+                                        Column(modifier = Modifier.fillMaxSize(),
+                                            verticalArrangement = Arrangement.spacedBy( spacingValue.dp)
                                         ) {
                                             Row(
                                                 modifier = Modifier
                                                     .fillMaxWidth()
+                                                    .weight(1f)
                                                     .background(gridBg)
                                                     .clip(RoundedCornerShape(radiusValue.dp)),
-                                                horizontalArrangement = Arrangement.spacedBy(
-                                                    spacingValue.dp
-                                                )
-                                            )
-                                            {
+                                                horizontalArrangement = Arrangement.spacedBy( spacingValue.dp)
+                                            ) {
                                                 Box(
                                                     modifier = Modifier
                                                         .weight(1f)
                                                         .padding(1.dp)
-                                                        .height(225.dp)
+                                                        .fillMaxSize()
                                                         .clip(RoundedCornerShape(radiusValue.dp))
                                                         .fillMaxWidth()
                                                         .background(Color.Gray)
@@ -701,7 +691,7 @@ class MainActivity : ComponentActivity() {
                                                     modifier = Modifier
                                                         .weight(1f)
                                                         .padding(1.dp)
-                                                        .height(225.dp)
+                                                        .fillMaxSize()
                                                         .clip(RoundedCornerShape(radiusValue.dp))
                                                         .fillMaxWidth()
                                                         .background(Color.Gray)
@@ -737,18 +727,17 @@ class MainActivity : ComponentActivity() {
                                             Row(
                                                 modifier = Modifier
                                                     .fillMaxWidth()
+                                                    .weight(1f)
                                                     .background(gridBg)
                                                     .clip(RoundedCornerShape(radiusValue.dp)),
-                                                horizontalArrangement = Arrangement.spacedBy(
-                                                    spacingValue.dp
-                                                )
+                                                horizontalArrangement = Arrangement.spacedBy(spacingValue.dp)
                                             )
                                             {
                                                 Box(
                                                     modifier = Modifier
                                                         .weight(1f)
                                                         .padding(1.dp)
-                                                        .height(225.dp)
+                                                        .fillMaxHeight()
                                                         .clip(RoundedCornerShape(radiusValue.dp))
                                                         .fillMaxWidth()
                                                         .background(Color.Gray)
@@ -784,7 +773,7 @@ class MainActivity : ComponentActivity() {
                                                     modifier = Modifier
                                                         .weight(1f)
                                                         .padding(1.dp)
-                                                        .height(225.dp)
+                                                        .fillMaxHeight()
                                                         .clip(RoundedCornerShape(radiusValue.dp))
                                                         .fillMaxWidth()
                                                         .background(Color.Gray)
@@ -828,18 +817,16 @@ class MainActivity : ComponentActivity() {
                                             .clip(RoundedCornerShape(radiusValue.dp))
                                             .padding(4.dp)
                                             .background(gridBg)
-                                    )
-                                    {
+                                    ) {
                                         Column(
                                             modifier = Modifier
                                                 .fillMaxSize()
                                                 .clip(RoundedCornerShape(radiusValue.dp)),
                                             verticalArrangement = Arrangement.spacedBy(spacingValue.dp)
-                                        )
-                                        {
+                                        ) {
                                             Row(
                                                 modifier = Modifier
-                                                    .fillMaxWidth()
+                                                    .weight(1f)
                                                     .clip(RoundedCornerShape(radiusValue.dp)),
                                                 horizontalArrangement = Arrangement.spacedBy(
                                                     spacingValue.dp
@@ -848,23 +835,23 @@ class MainActivity : ComponentActivity() {
                                             {
                                                 Box(
                                                     modifier = Modifier
-                                                    .height(140.dp)
-                                                    .weight(1f)
-                                                    .padding(1.dp)
-                                                    .clip(RoundedCornerShape(radiusValue.dp))
-                                                    .background(Color.Gray)
-                                                    .clickable {
-                                                        currentScreen = "imagePicker"
-                                                        selectedCell = 1
-                                                    }
-                                                    .pointerInput(Unit) {
-                                                        detectTransformGestures { centroid, pan, zoom, rot ->
-                                                            scale *= zoom
-                                                            offsetX += pan.x
-                                                            offsetY += pan.y
-                                                            rotation += rot
+                                                        .fillMaxHeight()
+                                                        .weight(1f)
+                                                        .padding(1.dp)
+                                                        .clip(RoundedCornerShape(radiusValue.dp))
+                                                        .background(Color.Gray)
+                                                        .clickable {
+                                                            currentScreen = "imagePicker"
+                                                            selectedCell = 1
                                                         }
-                                                    }
+                                                        .pointerInput(Unit) {
+                                                            detectTransformGestures { centroid, pan, zoom, rot ->
+                                                                scale *= zoom
+                                                                offsetX += pan.x
+                                                                offsetY += pan.y
+                                                                rotation += rot
+                                                            }
+                                                        }
                                                 ) {
                                                     if (cell1image != null) {  // only show image if selected!
                                                         Image(
@@ -883,23 +870,23 @@ class MainActivity : ComponentActivity() {
                                                 }
                                                 Box(
                                                     modifier = Modifier
-                                                    .height(140.dp)
-                                                    .weight(1f)
-                                                    .padding(1.dp)
-                                                    .clip(RoundedCornerShape(radiusValue.dp))
-                                                    .background(Color.Gray)
-                                                    .clickable {
-                                                        currentScreen = "imagePicker"
-                                                        selectedCell = 2
-                                                    }
-                                                    .pointerInput(Unit) {
-                                                        detectTransformGestures { centroid, pan, zoom, rot ->
-                                                            scale1 *= zoom
-                                                            offsetX1 += pan.x
-                                                            offsetY1 += pan.y
-                                                            rotation1 += rot
+                                                        .fillMaxHeight()
+                                                        .weight(1f)
+                                                        .padding(1.dp)
+                                                        .clip(RoundedCornerShape(radiusValue.dp))
+                                                        .background(Color.Gray)
+                                                        .clickable {
+                                                            currentScreen = "imagePicker"
+                                                            selectedCell = 2
                                                         }
-                                                    }
+                                                        .pointerInput(Unit) {
+                                                            detectTransformGestures { centroid, pan, zoom, rot ->
+                                                                scale1 *= zoom
+                                                                offsetX1 += pan.x
+                                                                offsetY1 += pan.y
+                                                                rotation1 += rot
+                                                            }
+                                                        }
                                                 ) {
                                                     if (cell2image != null) {  // only show image if selected!
                                                         Image(
@@ -918,18 +905,15 @@ class MainActivity : ComponentActivity() {
                                                 }
                                             }
                                             Row(
-                                                modifier = Modifier.fillMaxWidth()
+                                                modifier = Modifier
+                                                    .weight(1f)
                                                     .clip(RoundedCornerShape(radiusValue.dp)),
-                                                horizontalArrangement = Arrangement.spacedBy(
-                                                    spacingValue.dp
-                                                )
-                                            )
-                                            {
+                                                horizontalArrangement = Arrangement.spacedBy(spacingValue.dp)
+                                            ) {
                                                 Box(
                                                     modifier = Modifier
-                                                    .height(140.dp)
-                                                    .fillMaxWidth()
                                                     .weight(1f)
+                                                    .fillMaxHeight()
                                                     .padding(1.dp)
                                                     .clip(RoundedCornerShape(radiusValue.dp))
                                                     .background(Color.Gray)
@@ -963,24 +947,23 @@ class MainActivity : ComponentActivity() {
                                                 }
                                                 Box(
                                                     modifier = Modifier
-                                                    .height(140.dp)
-                                                    .fillMaxWidth()
-                                                    .weight(1f)
-                                                    .padding(1.dp)
-                                                    .clip(RoundedCornerShape(radiusValue.dp))
-                                                    .background(Color.Gray)
-                                                    .clickable {
-                                                        currentScreen = "imagePicker"
-                                                        selectedCell = 4
-                                                    }
-                                                    .pointerInput(Unit) {
-                                                        detectTransformGestures { centroid, pan, zoom, rot ->
-                                                            scale3 *= zoom
-                                                            offsetX3 += pan.x
-                                                            offsetY3 += pan.y
-                                                            rotation3 += rot
+                                                        .fillMaxHeight()
+                                                        .weight(1f)
+                                                        .padding(1.dp)
+                                                        .clip(RoundedCornerShape(radiusValue.dp))
+                                                        .background(Color.Gray)
+                                                        .clickable {
+                                                            currentScreen = "imagePicker"
+                                                            selectedCell = 4
                                                         }
-                                                    }
+                                                        .pointerInput(Unit) {
+                                                            detectTransformGestures { centroid, pan, zoom, rot ->
+                                                                scale3 *= zoom
+                                                                offsetX3 += pan.x
+                                                                offsetY3 += pan.y
+                                                                rotation3 += rot
+                                                            }
+                                                        }
                                                 ) {
                                                     if (cell4image != null) {  // only show image if selected!
                                                         Image(
@@ -998,54 +981,55 @@ class MainActivity : ComponentActivity() {
                                                     }
                                                 }
                                             }
-                                            Box(
+                                            Row(
                                                 modifier = Modifier
-                                                .height(170.dp)
-                                                .fillMaxWidth()
-                                                .padding(1.dp)
-                                                .clip(RoundedCornerShape(radiusValue.dp))
-                                                .background(Color.Gray)
-                                                .clickable {
-                                                    currentScreen = "imagePicker"
-                                                    selectedCell = 5
-                                                }
-                                                .pointerInput(Unit) {
-                                                    detectTransformGestures { centroid, pan, zoom, rot ->
-                                                        scale4 *= zoom
-                                                        offsetX4 += pan.x
-                                                        offsetY4 += pan.y
-                                                        rotation4 += rot
-                                                    }
-                                                }
-                                            ) {
-                                                if (cell5image != null) {  // only show image if selected!
-                                                    Image(
-                                                        painter = painterResource(id = cell5image!!),
-                                                        contentDescription = null,
-                                                        modifier = Modifier.fillMaxSize()
-                                                            .graphicsLayer {
-                                                                scaleX = scale4
-                                                                scaleY = scale4
-                                                                translationX = offsetX4
-                                                                translationY = offsetY4
-                                                                rotationZ = rotation4
+                                                    .fillMaxWidth()
+                                                    .weight(1f)
+                                            )   {
+                                                Box(
+                                                    modifier = Modifier
+                                                        .fillMaxSize()
+                                                        .padding(1.dp)
+                                                        .clip(RoundedCornerShape(radiusValue.dp))
+                                                        .background(Color.Gray)
+                                                        .clickable {
+                                                            currentScreen = "imagePicker"
+                                                            selectedCell = 5
+                                                        }
+                                                        .pointerInput(Unit) {
+                                                            detectTransformGestures { centroid, pan, zoom, rot ->
+                                                                scale4 *= zoom
+                                                                offsetX4 += pan.x
+                                                                offsetY4 += pan.y
+                                                                rotation4 += rot
                                                             }
-                                                    )
+                                                        }
+                                                ) {
+                                                    if (cell5image != null) {  // only show image if selected!
+                                                        Image(
+                                                            painter = painterResource(id = cell5image!!),
+                                                            contentDescription = null,
+                                                            modifier = Modifier.fillMaxSize()
+                                                                .graphicsLayer {
+                                                                    scaleX = scale4
+                                                                    scaleY = scale4
+                                                                    translationX = offsetX4
+                                                                    translationY = offsetY4
+                                                                    rotationZ = rotation4
+                                                                }
+                                                        )
+                                                    }
                                                 }
                                             }
                                         }
-
                                     }
-
-
                                 }
                                 Spacer(modifier = Modifier.height(32.dp))
                                 Box(
                                     modifier = Modifier
                                         .clip(RoundedCornerShape(8.dp))
                                         .background(boxColor)
-                                )
-                                {
+                                ) {
                                     Text(
                                         "RADIUS : ${radiusValue.toInt()}",
                                         color = textColor,
@@ -1069,8 +1053,7 @@ class MainActivity : ComponentActivity() {
                                     modifier = Modifier
                                         .clip(RoundedCornerShape(8.dp))
                                         .background(boxColor)
-                                )
-                                {
+                                ) {
                                     Text(
                                         "SPACING : ${spacingValue.toInt()}",
                                         color = textColor,
@@ -1155,16 +1138,11 @@ class MainActivity : ComponentActivity() {
                                             .background(Color.Gray)
                                             .clickable {
                                                 currentScreen = "editor"
-                                                if (selectedCell == 1) cell1image =
-                                                    R.drawable.avengers
-                                                if (selectedCell == 2) cell2image =
-                                                    R.drawable.avengers
-                                                if (selectedCell == 3) cell3image =
-                                                    R.drawable.avengers
-                                                if (selectedCell == 4) cell4image =
-                                                    R.drawable.avengers
-                                                if (selectedCell == 5) cell5image =
-                                                    R.drawable.avengers
+                                                if (selectedCell == 1) cell1image = R.drawable.avengers
+                                                if (selectedCell == 2) cell2image = R.drawable.avengers
+                                                if (selectedCell == 3) cell3image = R.drawable.avengers
+                                                if (selectedCell == 4) cell4image = R.drawable.avengers
+                                                if (selectedCell == 5) cell5image = R.drawable.avengers
                                             })
                                     {
                                         Image(
@@ -1188,18 +1166,13 @@ class MainActivity : ComponentActivity() {
                                             .background(Color.Gray)
                                             .clickable {
                                                 currentScreen = "editor"
-                                                if (selectedCell == 1) cell1image =
-                                                    R.drawable.ironman
-                                                if (selectedCell == 2) cell2image =
-                                                    R.drawable.ironman
-                                                if (selectedCell == 3) cell3image =
-                                                    R.drawable.ironman
-                                                if (selectedCell == 4) cell4image =
-                                                    R.drawable.ironman
-                                                if (selectedCell == 5) cell5image =
-                                                    R.drawable.ironman
-                                            })
-                                    {
+                                                if (selectedCell == 1) cell1image = R.drawable.ironman
+                                                if (selectedCell == 2) cell2image = R.drawable.ironman
+                                                if (selectedCell == 3) cell3image = R.drawable.ironman
+                                                if (selectedCell == 4) cell4image = R.drawable.ironman
+                                                if (selectedCell == 5) cell5image = R.drawable.ironman
+                                            }
+                                    ) {
                                         Image(
                                             painter = painterResource(id = R.drawable.ironman),
                                             contentDescription = "ironman",
@@ -1262,18 +1235,13 @@ class MainActivity : ComponentActivity() {
                                             .background(Color.Gray)
                                             .clickable {
                                                 currentScreen = "editor"
-                                                if (selectedCell == 1) cell1image =
-                                                    R.drawable.avengers2
-                                                if (selectedCell == 2) cell2image =
-                                                    R.drawable.avengers2
-                                                if (selectedCell == 3) cell3image =
-                                                    R.drawable.avengers2
-                                                if (selectedCell == 4) cell4image =
-                                                    R.drawable.avengers2
-                                                if (selectedCell == 5) cell5image =
-                                                    R.drawable.avengers2
-                                            })
-                                    {
+                                                if (selectedCell == 1) cell1image = R.drawable.avengers2
+                                                if (selectedCell == 2) cell2image = R.drawable.avengers2
+                                                if (selectedCell == 3) cell3image = R.drawable.avengers2
+                                                if (selectedCell == 4) cell4image = R.drawable.avengers2
+                                                if (selectedCell == 5) cell5image = R.drawable.avengers2
+                                            }
+                                    ) {
                                         Image(
                                             painter = painterResource(id = R.drawable.avengers2),
                                             contentDescription = "avengers2",
@@ -1288,16 +1256,11 @@ class MainActivity : ComponentActivity() {
                                             .background(Color.Gray)
                                             .clickable {
                                                 currentScreen = "editor"
-                                                if (selectedCell == 1) cell1image =
-                                                    R.drawable.blackpanther
-                                                if (selectedCell == 2) cell2image =
-                                                    R.drawable.blackpanther
-                                                if (selectedCell == 3) cell3image =
-                                                    R.drawable.blackpanther
-                                                if (selectedCell == 4) cell4image =
-                                                    R.drawable.blackpanther
-                                                if (selectedCell == 5) cell5image =
-                                                    R.drawable.blackpanther
+                                                if (selectedCell == 1) cell1image = R.drawable.blackpanther
+                                                if (selectedCell == 2) cell2image = R.drawable.blackpanther
+                                                if (selectedCell == 3) cell3image = R.drawable.blackpanther
+                                                if (selectedCell == 4) cell4image = R.drawable.blackpanther
+                                                if (selectedCell == 5) cell5image = R.drawable.blackpanther
                                             })
                                     {
                                         Image(
@@ -1335,18 +1298,13 @@ class MainActivity : ComponentActivity() {
                                             .background(Color.Gray)
                                             .clickable {
                                                 currentScreen = "editor"
-                                                if (selectedCell == 1) cell1image =
-                                                    R.drawable.mountain
-                                                if (selectedCell == 2) cell2image =
-                                                    R.drawable.mountain
-                                                if (selectedCell == 3) cell3image =
-                                                    R.drawable.mountain
-                                                if (selectedCell == 4) cell4image =
-                                                    R.drawable.mountain
-                                                if (selectedCell == 5) cell5image =
-                                                    R.drawable.mountain
-                                            })
-                                    {
+                                                if (selectedCell == 1) cell1image = R.drawable.mountain
+                                                if (selectedCell == 2) cell2image = R.drawable.mountain
+                                                if (selectedCell == 3) cell3image = R.drawable.mountain
+                                                if (selectedCell == 4) cell4image = R.drawable.mountain
+                                                if (selectedCell == 5) cell5image = R.drawable.mountain
+                                            }
+                                    ) {
                                         Image(
                                             painter = painterResource(id = R.drawable.mountain),
                                             contentDescription = "mountain",
@@ -1380,7 +1338,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-
-
-
